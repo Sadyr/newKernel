@@ -1,0 +1,1010 @@
+DJANGO
+python -m venv venv
+source todoenv/bin/activate
+ python3 -m pip freeze > requirements.txt
+django-admin startproject todo_project .
+python manage.py startapp polls
+
+Django-admin startproject nir - запуск проекта
+Python manage.py runserver    - запуск локального сервера
+Ctrl+c                        - остановить сервер
+CLS                           - очистить терминал
+python manage.py makemigrations  - миграция баз данных
+python manage.py createsuperuser  - создание суперюзера
+pip install -r requirements.txt   - установка пакетов
+Pip freeze
+Pip freeze > requirments.txt
+ python manage.py shell           -   доступ к оболочке
+python manage.py migrate           -миграция
+Python manage.py startapp main    создания приложения
+Почтовый клиент для почты
+добавить эти строки в settings.py
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "sadyr0012@gmail.com"
+EMAIL_HOST_PASSWORD = "Miraxes1997"
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+
+GIT ANA GITHUB>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# git config --global user.name "Sadyr Sauytov"
+# git config --global user.email "sadyr0012@gmail.com"
+Посмотреть все конфиги
+# git config -l
+Расположение конфиг файла
+/home/username/config
+Создать базу данных гита в определенной директории
+: Внутри директории ввести команду
+# git init . or * or path
+Добавление файла
+# git add . or * or path
+Создать коммит(скрин)
+# git commit -m "message or comment"
+История коммитов
+# git log
+Последний 1 коммит
+# git log -1
+Подробная инфа о коммите
+# git log -1 -p
+Вернуть прежнее состояния, отмена изменений
+# git checkout file.txt
+Поссмотреть что будет если сделать коммит
+# git diff --staged
+Для игнора файлов и директорий, создать файл .gitignore  и туда прописать данные для игнора
+Добавления удаленного репо
+# git remote add origin git.github@ssauytovKernelx
+# git branche -M main
+# git push -U origin main
+
+
+ MYSQL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+sudo mysql_secure_installation - run after install
+Настройте сервер MySQL в операционной системе Ubuntu.
+https://docs.rackspace.com/support/how-to/configure-mysql-server-on-the-ubuntu-operating-system/
+Как разрешить удаленный доступ к MySQL
+https://www.digitalocean.com/community/tutorials/how-to-allow-remote-access-to-mysql
+Руководство для начинающих по управлению пользователями MySQL
+https://www.thegeekdiary.com/beginners-guide-to-mysql-user-management/
+Mython and Mysql
+https://www.w3schools.com/python/python_mysql_create_db.asp
+https://realpython.com/python-mysql/
+Change root pass in  mysql
+https://stackoverflow.com/questions/7534056/mysql-root-password-change
+Как удалить MySQL?https://askubuntu.com/questions/172514/how-do-i-uninstall-mysql
+
+Установка MySQL в Ubuntu 20.04
+https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04-ru
+command mysql
+http://g2pc1.bu.edu/~qzpeng/manual/MySQL%20Commands.htm
+Установка PhpMyAdmin
+https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-20-04-ru
+https://losst.ru/ustanovka-phpmyadmin-ubuntu-18-04
+config
+vim /etc/mysql/mysql.conf.d/mysqld.cnf
+Если проблемы с удаленным соедиеннием
+skip-host-cache
+skip-name-resolve
+Логи
+vim /var/log/mysql/error.log
+
+
+
+WEB-SERVER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+sudo systemctl stop httpd  - work with process httpd  | start stop status restart reload disable enable 
+yum install links  - скачать браузер на сервер сентос
+yum search httpd   -  проверить установлеен ли  демон веб сервера
+yum install httpd httpd manual  -  установить веб сервер апач и мануа л к ниму
+rpm -qi httpd  - проверить какие пакеты апач укстановлены
+rpm -ql httpd   - вывести лист
+rpm -qd httpd    поиск документаций
+rpm -qc httpd   - поиск конфиг файлов
+httpd -t   - проверка синтакиса конфиг файлов
+service httpd reload   -  перечитать конфиг файлы
+https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-centos-7-ru
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7#step-four-%E2%80%94-test-php-processing-on-your-web-server
+https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04-ru
+
+Nginx
+sudo apt install nginx -y
+nginx -t
+nginx -s reload
+curl -i http://164.92.160.106/
+
+
+
+USRS ANA GROUPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+useradd username  - создать пользователя
+passwd username    -добавить пароль для пользователю
+su username    - перейти в кдругому пользователю
+usermod -aG wheel username  - дать привилегии sudo useru
+sudo whoami  - проверить привилегии  sudo
+uname -a - all information system
+$ sudo useradd -m -d /home/bob01 bob01   - добавить юзера
+SSH ANA FTP >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# rm -rf /etc/vsftpd/*   - удалить все из папки
+chown sadyr:sadyr /etc/vsftpd/vsftpd.conf   - изменить владельца
+scp root@89.219.32.27:/etc/vsftpd/vsftpd.conf /home/balerion/Videos   - скачать файл из сервера на локалку
+scp /home/balerion/Videos/vsftpd.conf  root@89.219.32.27:/home/sadyr   - загрузить с локалки на сервер файл
+$ sudo yum install net-tools   - установить сетевые инструменты
+Разрешаем бранмауеру трафик по 21 порту для FTP
+sudo firewall-cmd --zone=public --permanent --add-port=21/tcp
+sudo firewall-cmd --zone=public --permanent --add-service=ftp
+sudo firewall-cmd –-reload
+ssh-copy-id root@89.219.32.27   -   lj,fdbnm  publik key на сервер
+UBUNTU ADD USER>>>>>>>>>>>>>>>>.
+adduser sadyr    >>>
+usermod -aG sudo sadyr
+su - sadyr
+$ sudo userdel боб
+$ passwd bob
+Существует файл с именем /etc/sudoers, в этом файле перечислены пользователи,
+которые могут запускать sudo. Вы можете редактировать этот файл с помощью команды visudo .
+
+
+NETWORK >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+yum install net-tools    -  установить сетевые утилиты
+netstat -lt -p    -  показать слущающие тсп порты процессы
+service httpd status    -  проверить статус веб сервера
+netstat -lt -p -n    -  показать номера портов
+curl -v http://localhost/ 1>/dev/null   -  проверка работы веб сервера
+iptables -L    -  показать пакетный фильтр (который блокирует доступ к веб серверу)
+service iptables stop   - остановить пакетный фильтр
+netstat -an |grep 65432
+hostname -i  >> Узнать ip хоста
+curl -4 icanhazip.com  >> Узнать публичный адрес хоста
+
+
+
+FIREWALL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+firewall-cmd  --permanent  --add-service=http  >> Добавить сервисе http в фаирволл
+firewall-cmd --permanent  --add-service=https  >> Добавить сервисе https в фаирволл
+firewall-cmd  --reload   >> Перечитать конфиги файрвола
+
+
+READ FILES AND EDIT FILES
+less - чтение файлов по странрично  //////////
+q - выход
+g - переход в начала файла
+G - переход в конец текствого файла
+/searche - поиск инфо в файле
+h - справка
+HISTORY -  история комманд
+!!  - предыдущая команда
+CTRL+R - поиск по пред командам
+
+CMD LINE
+ mkdir -p books/hemmingway/favorites
+rmdir каталог
+ find /home -name puppies.jpg
+find /home -type d -name MyFolder
+whatis cat - что делает данная команда
+alias foobar='ls -la'    - создание псевдонима
+~/.bashrc  - где сохранять псевдонимы
+ unalias foobar -  удалить псевдонимы
+ cat < peanuts.txt > banana.txt  -  перенаправление ввода
+
+TEXT
+echo $HOME  - path to home
+echo $USER   - see username
+
+
+ uptime	-Сколько времени включен компьютер
+ uname	-Имя ОС
+ uname -a 	-(uname all)  Полная название системы  
+ lscpu	-   (listcpu)  -  информация о процессоре
+ ls	-список папок в текущей директории 
+ echo $PATH
+ Ctrl alt(left) +f3    -    полный терминал
+ Ctrl alt(left) +f3    -   обратно в графический интерфейс
+ man -k time  - поиск команд по ключивым словам (keywords)
+ man uptime - man и  название команды открывает документацию этой команды
+что бы делать поиск по этой документации, нужно прописать слэш "/" 
+и написать слово кооторый нужно найти. Чтобы выйти , нужно нажать "q"
+ man uptime - man и  название команды открывает документацию этой команды
+что бы делать поиск по этой документации, нужно прописать слэш "/" и 
+написать слово кооторый нужно найти. Чтобы выйти , нужно нажать "q"
+ whatis uptime - что такое команда uptime . выводит инфо о функции команды
+ whereis uptime - где находится программа которая выполняет эту команду
+ sudo apt install mlocate   - установить программу mlocate
+ locate uptime   - где находится программа или файл uptime
+ ls - l   - показать текущию директорию в полном обьеме l=long
+ ping www.google.com    -    пинговать серверы гугл
+ ps             -   какие процессы запущены в терминале
+ fg -   for grownd вернуть на лицевую сторону
+ CTRL+Z - отправить процесс в background
+ CTRL+C - прекратить процесс вобще
+ CTRL+L - очистить терминал или clear
+ ctrl + alt + F2 на экран логина, ctrl + alt + F1 на рабочий стол).
+ 
+	НАВИГАЦИЯ ПО ФАЙЛАМ И ДИРЕКТОРИЯМ
+ cd - change directirory, сменить директорию
+ ls - вывести содержимое директории
+ pwd - вывести путь где мы сейчас
+ ~ - сокращение нашей Home директории
+.. - директория которая выше
+. - директория где мы сейчас
+ls -la -R / - прикол
+
+РАБОТА С ФАЙЛАМИ
+touch hello.txt - создать файл или обновить время файла
+cat linux.txt - читать файл
+more linux.txt - читать файл, можно нажимать табуляцию
+less linux.txt - читать файл, можно нажимать табуляцию
+cp linux.txt ~/Desktop - Копирование файлов с одной папки в другую
+cp linux*.* ~/Desktop - Копирование многих файлов одноврменно одной папки в другую
+rm * - Удаление всех файлов в текущей директории
+rm Dir2/* - Удаление всех файлов в текущей директории
+cp file?.txt -v Dir - скопировать файл в директорию, показать процесс -verbose,вместо ? только один символ
+cp -R Dir1 NewDir - Копирование всех файлов одной директории в другую с помошью рекурсии
+mv secret.txt .secret.txt - Скрыть файл
+
+РАБОТА С ДИРЕКТОРИЯМИ
+mkdir Dir2 - создание директории
+mkdir -p Dir4/Dir5 - создание одной директории внутри другой директории
+mv Dir1 NewDir1 - Переименование директории
+rmdir NewDir1 - удалить директорию
+rm -R NewDir* - Удалить все папки с таким названием с рекурсией
+sudo rm -R / - Стереть все файлы
+
+СОЗДАНИЕ ЛИНКОВ
+ln - создать дубликат файла
+ln -s   - создать symbolic линк на файл илии директорию типа Shortcut
+ln -s /home/balerion/Документы/Dir4 mylinktodir4
+ln file2.txt dublicate.txt
+ln  / >>  file.txt
+ln file2.txt dublicate.txt
+
+
+ПРОЦЕССЫ
+ kill -9 12445   - грубое завершение процесса
+kill 12445   - медленное завершение процесса
+sleep 1000 &   - Отправка задания в фоновый режим  (&)
+jobs - Просмотреть все фоновые задания
+Отправка задания в фоновом режиме на существующем задании
+ Сначала приостановите задание с помощью Ctrl-Z, затем запустите команду bg , чтобы перевести его в фоновый режим.
+fg   - %1 Перемещение задания из фона на передний план
+kill %1  - Kill background jobs
+cat /proc/cpuinfo
+uptime
+sudo apt install sysstat
+iostat
+crom
+30 08 * * * /home/pete/scripts/change_wallpaper
+Поля расположены слева направо:
+
+Минута - (0-59)
+Час - (0-23)
+День месяца - (1-31)
+Месяц - (1-12)
+День недели - (0-7). 0 и 7 обозначаются как воскресенье
+crontab -e
+
+
+
+ ПАКЕТЫ
+/etc/apt/sources.list   -  В системе Debian этим исходным файлом является файл /etc/apt/sources.list . Ваша машина будет знать, что нужно заглянуть туда и проверить наличие добавленных вами исходных репозиториев.
+Install a package
+Debian: $ dpkg -i some_deb_package.deb
+RPM: $ rpm -i some_rpm_package.rpm
+The i stands for install. You can also use the longer format of --install.
+Remove a package
+Debian: $ dpkg -r some_deb_package.deb
+RPM: $ rpm -e some_rpm_package.rpm
+Debian: r for remove
+RPM: e for erase
+List installed packages
+Debian: $ dpkg -l
+RPM: $ rpm -qa
+Debian: l for list
+RPM: q for query and a for all
+
+Install a package from a repository
+Debian: $ apt install package_name
+RPM: $ yum install package_name
+
+Remove a package
+Debian: $ apt remove package_name
+RPM: $ yum erase package_name
+
+Updating packages for a repository
+It's always best practice to update your package repositories so they are up to date before you install and update a package.
+Debian: apt update; apt upgrade
+RPM: yum update
+Get information about an installed package
+Debian: apt show package_name
+RPM: yum info package_name
+Compiles
+https://linuxjourney.com/lesson/compile-source-code
+PACKAGE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+rpm -qa |grep mariadb  >> Найти установленную прогу из списка
+yum remove mariadb-libs-5.5.68-1.el7.x86_64 >>>>>>>>>Удалить прогу
+
+
+SYSTEM
+sudo shutdown -h now -Это остановит систему (выключит ее),
+sudo shutdown -h +2 - Это выключит вашу систему через две минуты.
+sudo shutdown -r now - Вы также можете перезапустить с помощью команды shutdown:
+sudo reboot   -  Или просто используйте команду перезагрузки:
+
+LOGGING
+/var/log/messages
+Этот журнал содержит все некритические и неотладочные сообщения, включая сообщения,
+зарегистрированные во время загрузки (dmesg), аутентификации,
+cron, демона и т. д. Очень полезно получить представление о том, как работает ваша машина.
+
+/var/log/syslog
+Это регистрирует все, кроме сообщений
+аутентификации, это чрезвычайно полезно для отладки ошибок на вашем компьютере.
+
+/var/log/dmesg - 4. Ведение журнала ядра
+/var/log/kern.log -
+/var/log/auth.log - /var/log/auth.log
+  /etc/logrotate.d.  - 6. Управление файлами журналов
+
+
+Предисловие
+Иногда, при работе с пакетными менеджерами, возникает проблема с неразрешенными зависимостями пакетов. В данной статье будут рассмотрены варианты решения этой проблемы.
+
+Все операции выполняются в терминале.
+Убедитесь что ни один пакетный менеджер не запущен. Это может быть: apt-get, aptitude, Synaptic, KPackageKit, Центр Приложений Ubuntu и тд.
+Используя APT-GET
+Обычно ошибка выглядит так:
+
+E: Неудовлетворённые зависимости. Попытайтесь выполнить 'apt-get -f install', не указывая имени пакета, (или найдите другое решение).
+Удалите кеш пакетов:
+
+sudo apt-get clean
+Удалите осиротевшие пакеты:
+
+sudo apt-get autoremove
+Обновите список пакетов:
+
+sudo apt-get update
+Исправьте зависимости:
+
+sudo apt-get -f install
+Обычно этого достаточно.
+
+Если вы запутались с зависимостями, поможет интеллектуальное обновление системы:
+
+sudo apt-get dist-upgrade
+Если установка была прервана, то следует переустановить пакет
+
+sudo apt-get install --reinstall имя_пакета
+Если репозиторий недоступен, исправить:
+
+/etc/apt/sources.list - главный список репозиториев
+/etc/apt/sources.list.d - каталог для сторонних репозиториев
+Если невозможно удалить/переустановить пакет, исправить:
+
+/var/lib/dpkg/status - список установленных пакетов
+/var/lib/dpkg/available - список доступных для скачивания пакетов
+Система, apt-get, Пакетные менеджеры
+
+
+sudo apt list --upgradable
+
+
+3
+
+Я понимаю, что в настоящее время у вас возникают проблемы при попытке установить/обновить пакеты PHP, даже если ваши экземпляры работают нормально; Во-первых, я бы порекомендовал вам принудительно выполнить установку в случае, если «установка пакета» была прервана ранее, попробуйте следующую команду:
+
+sudo apt-get install -f
+
+Если вы по-прежнему не можете установить пакеты PHP 7.2, удалите информационные файлы сообщения проблемного пакета; вы можете попробовать удалить файлы, связанные с рассматриваемым пакетом, из /var/lib/dpkg/info.
+
+Из-за того, что у вас проблемы со всем php7.2, поищите связанные с ним файлы:
+
+ls -l /var/lib/dpkg/info | grep -i php7.2
+
+После этого попробуйте переместить их (временно) в другую папку (см. пример команды ниже):
+
+sudo mv /var/lib/dpkg/info/php7.2-.* /tmp
+
+И, наконец, используйте sudo apt update, и вы сможете установить программное обеспечение как обычно. Пожалуйста, дайте мне знать результаты. Я буду ждать вашего ответа!
+
+Франциско З.
+
+Делиться
+Улучшить этот ответ
+Следовать
+изменено 12 июл, 2019 в 1:45
+аватар пользователя
+подготовка
+1147 10 10 серебряных значков1818 бронзовых знаков
+ответ дан 11 июля 2019 в 22:32
+аватар пользователя
+Фрэн Зама
+106 33 бронзовых значка
+Перемещение связанных файлов во /var/lib/dpkg/infoвсе пакеты, выдавшие ошибки, чтобы tmpисправить это для меня. Теперь я могу запускать обновления без ошибок. Что-то пошло не так во время предыдущего обновления?
+–
+пользователь1013338
+ 12 июля 2019 г., 12:23
+
+
+ sudo apt-get remove –purge apache2 apache2-utils [uninstall apache2 Ubuntu]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mice
+
+
+
+
+
