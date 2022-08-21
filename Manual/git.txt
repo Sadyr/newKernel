@@ -1,0 +1,6 @@
+git init   - Иницилизация репозитория
+git add  - Добавление файлов в список подготовленных
+git commit -m "Message" - Внесение изменений в репозиторий
+git remote remotenewkernel masterbranche
+
+
