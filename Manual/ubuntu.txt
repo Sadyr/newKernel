@@ -1,0 +1,4 @@
+USER AND GROUP
+adduser sadyr
+usermod -aG sudo sadyr
+su - sadyr
