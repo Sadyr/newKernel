@@ -2,3 +2,6 @@ USER AND GROUP
 adduser sadyr
 usermod -aG sudo sadyr
 su - sadyr
+ааа
+мкмемемме5меммемем
+меме

@@ -10,3 +10,7 @@ echo do_shortcode ('[cstmsrch_search]');
 
 ?>
 [cstmsrch_search]
+
+
+
+echo do_shortcode ('[stm-calc id="894"]');
