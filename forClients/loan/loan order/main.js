@@ -1,7 +1,6 @@
 /* Значение из текстовых инпутов*/
 
 
-
 function check() {
     let x = document.getElementById("mySelect").value;
     if(x === "IP"){
@@ -79,7 +78,7 @@ assignValueCfRange();
 
 
 
-const percent = 6;
+const percent = 0.005;
 
 
 for(let input of inputsRange){
@@ -89,7 +88,7 @@ for(let input of inputsRange){
       assignValueCf();
      assignValueCfRange();
     
-      calculation(totalCost.value,percent,creditTerm.value);   
+      calculation(totalCost.value,creditTerm.value,percent);   
     })
 }
 
@@ -100,7 +99,7 @@ for(let input of inputsNumber){
       assignValueCf();
       assignValueCfRange();
    
-      calculation(totalCost.value,percent,creditTerm.value);   
+      calculation(totalCost.value,creditTerm.value,percent);   
     })
 }
 
@@ -111,7 +110,7 @@ for(let input of inputsNumber){
 
 
 
-const calculation = (totalCost = 0,creditTerm = 1,percent = 6) =>{
+const calculation = (totalCost = 500000,creditTerm = 1,percent = 0.005) =>{
 /*
     ЕП - Ежемесячный платеж
     РК - Размер кредита
@@ -124,13 +123,17 @@ const calculation = (totalCost = 0,creditTerm = 1,percent = 6) =>{
     let lounAmount = totalCost //Размер кредита
     let interestRate = percent; //Процентная ставка
     let numberOfMonths = creditTerm; //Количество месяцев
+	//const ab = Math.pow((1+interestRate), (-numberOfMonths));
 
-    monthlyPayment = percent  + lounAmount + interestRate*numberOfMonths;
+   // monthlyPayment = percent  + lounAmount + interestRate*numberOfMonths;
+    monthlyPayment = lounAmount * ((interestRate ) /( 1- (1+interestRate)**(-numberOfMonths)))
+
     if (monthlyPayment < 0){
         return false;
     } else {
-        totalAmountOfCredit.innerHTML = lounAmount + '<span>₸</span>';
-        totalMonthlyPayment.innerHTML = monthlyPayment + '<span>₸</span>';
+        totalAmountOfCredit.innerHTML = '<span>₸ </span>' +lounAmount;
+		
+        totalMonthlyPayment.innerHTML = '<span>₸ </span>' + Math.round(monthlyPayment) ;
         
 
     }
