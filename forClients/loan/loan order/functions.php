@@ -273,16 +273,14 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'wb4wp_add_to_cart_fragments', 
 
 function wpschool_text_shortcode() {
     return '
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <title>Calculator</title>
+   
+    <title>Кредитный калькулятор</title>
 </head>
 <body>
 <div class="container ">
@@ -300,7 +298,7 @@ function wpschool_text_shortcode() {
                 <input type="number" id="total-cost" value="0" class="input-number">
             </div>
             <div class="input">
-                <input type="range" min="500000" max="61200000" step="100000"id="total-cost-range" value="500000" class="input-range">
+                <input type="range" min="61260000" max="500000000" step="20000000"id="total-cost-range" value="61260000" class="input-range">
             </div>
        
             <div class="title">Срок кредита в месяцах</div>
@@ -357,32 +355,32 @@ function wpschool_text_shortcode() {
             <div class="container py-4">
 
                 <!-- Bootstrap 5 starter form -->
-                <form id="contactForm">
+                  <form id="contactForm"  action="send.php" method="post">
+ 
               
                   <!-- Name input -->
                   <div class="mb-3">
-                    <select class="form-control" id="mySelect" name="select" onchange="check()"> 
-                        <option value="value1" selected>Форма физ./юр лица</option>
-                        <option value="IP" >ТОО</option>
-                        <option value="value3">ИП</option>
+                    <select class="form-control" id="mySelect" name="select_urlico" onchange="check()"> 
+                        <option value="Форма физ./юр лица" selected>Форма физ./юр лица</option>
+                        <option value="ТОО" >ТОО</option>
                 </select>
                   </div>
                   <div class="demo">
                     
                   </div>
                                     <div class="mb-3">
-                  <input class="form-control" type="text" id="fname" name="company" placeholder="Наименование юр.лица">
+                  <input class="form-control" type="text" id="fname" name="company_name" placeholder="Наименование юр.лица">
                 </div>
             
                 <div class="mb-3">
                     <div class="input-wrapper">
                         <div class="title">Сумма кредита в тенге</div>
                         <div class="input">
-                            <input type="number" id="total-cost-cf" value="0" class="input-number">
+                            <input type="number" id="total-cost-cf" value="0" name="loan_sum" class="input-number">  
                         </div>
                         
                         <div class="input">
-                            <input type="range" min="500000" max="61200000" step="100000"id="total-cost-range-cf" value="500000" class="input-range">
+                            <input type="range" min="61260000" max="500000000" step="20000000"id="total-cost-range-cf" value="61260000" class="input-range">
                         </div>
                     </div>
                </div>
@@ -391,7 +389,7 @@ function wpschool_text_shortcode() {
                 <div class="input-wrapper">
                     <div class="title">Срок кредита в месяцах</div>
                     <div class="input">
-                        <input type="number" id="credit-term-cf" value="0"  class="input-number">
+                        <input type="number" id="credit-term-cf" value="0"  class="input-number" name = "times">
                     </div>
                     <div class="input">
                         <input type="range" min="3" max="84"  step="1" id="credit-term-range-cf" value="0" class="input-range">
@@ -401,53 +399,51 @@ function wpschool_text_shortcode() {
             
               <div class="mb-3">
               <p>Предлагаемое залоговое обеспечение            </p>
-              <select class="form-control"  name="select"> 
-                  <option value="value1">Движемое имещество</option>
-                  <option value="value2" selected>Недвижемое имущество</option>
-                  <option value="value3">Оборудование</option>
-                  <option value="value3">Прочее (Гарантия фонда Даму, по программе Даму Оптима )</option>
-                  <option value="value3">Нет залога</option>
+              <select class="form-control"   name="select_zalog"> 
+                  <option value="Движемое имещество">Движемое имещество</option>
+                  <option value="Недвижемое имущество" selected>Недвижемое имущество</option>
+                  
               </select>
             </div>
             
             <div class="mb-3">
-            <select class="form-control"  name="select"> 
-                <option value="value1">На приобретение основных средств</option>
-                <option value="value2" selected>Целевое назначение кредита</option>
-                <option value="value3">На пополнение оборотных средств</option>
+            <select class="form-control"  name="select_target"> 
+                <option value="На приобретение основных средств">На приобретение основных средств</option>
+                <option value="Целевое назначение кредита" selected>Целевое назначение кредита</option>
+                <option value="На пополнение оборотных средств">На пополнение оборотных средств</option>
             </select>
             </div>
             
             <div class="mb-3">
-            <select  class="form-control" name="select"> 
-                <option value="value2" selected>Район регистрации юр лица</option>
-                <option value="value3">Бостандыкский</option>
-                <option value="value3">Медеуский</option>
-                <option value="value3">Алмалинский</option>
-                <option value="value3">Ауэзовский</option>
-                <option value="value3">Алатауский</option>
-                <option value="value3">Наурызбайский</option>
-                <option value="value3">Жетысуйский</option>
-                <option value="value3">Турксибский</option>
+            <select  class="form-control"  name="select_address"> 
+                <option value="Район регистрации юр лица" selected>Район регистрации юр лица</option>
+                <option value="Бостандыкский">Бостандыкский</option>
+                <option value="Медеуский">Медеуский</option>
+                <option value="Алмалинский">Алмалинский</option>
+                <option value="Ауэзовский">Ауэзовский</option>
+                <option value="Алатауский">Алатауский</option>
+                <option value="Наурызбайский">Наурызбайский</option>
+                <option value="Жетысуйский">Жетысуйский</option>
+                <option value="Турксибский">Турксибский</option>
               </select>  
             </div>
             
             <div class="mb-3">
-            <input class="form-control"  type="number" id="fname" name="firstname" placeholder="Телефон">
+            <input class="form-control"  type="number" id="fname" name="phone" placeholder="Телефон">
             </div>
             
               
             
                   <!-- Email address input -->
                   <div class="mb-3">
-                    <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required, email" />
+                    <input class="form-control" id="emailAddress" name ="email"  type="email" placeholder="Email Address" data-sb-validations="required, email" />
                   </div>
               
                 
               
                   <!-- Form submit button -->
                   <div class="d-grid">
-                    <button class="btn btn-primary btn-lg" type="submit">Отправить</button>
+                    <button class="btn btn-primary btn-lg"   type="submit" name="submit" value="Submit">Отправить</button>
                   </div>
                 </form>
               </div>
@@ -457,8 +453,7 @@ function wpschool_text_shortcode() {
     </div>
   </div>
   
-   <script src="/loan order/bootstrap.bundle.min.js"></script>
-   <script src="main.js"></script> 
+   
 </body>
 </html>
 

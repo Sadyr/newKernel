@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
     <title>Calculator</title>
 </head>
 <body>
@@ -25,7 +25,7 @@
                 <input type="number" id="total-cost" value="0" class="input-number">
             </div>
             <div class="input">
-                <input type="range" min="500000" max="61200000" step="100000"id="total-cost-range" value="500000" class="input-range">
+                <input type="range" min="61260000" max="500000000" step="20000000"id="total-cost-range" value="61260000" class="input-range">
             </div>
        
             <div class="title">Срок кредита в месяцах</div>
@@ -82,7 +82,7 @@
             <div class="container py-4">
 
                 <!-- Bootstrap 5 starter form -->
-                  <form id="contactForm"  action="testsmtp.php" method="post">
+                  <form id="contactForm"  action="send.php" method="post">
  
               
                   <!-- Name input -->
@@ -104,7 +104,7 @@
                     <div class="input-wrapper">
                         <div class="title">Сумма кредита в тенге</div>
                         <div class="input">
-                            <input type="number" id="total-cost-cf" value="0" name='loan_sum' class="input-number">  
+                            <input type="number" id="total-cost-cf" value="0" name="loan_sum" class="input-number">  
                         </div>
                         
                         <div class="input">
@@ -183,7 +183,7 @@
     </div>
   </div>
   
-   <script src="bootstrap.bundle.min.js"></script>
-   <script src="main.js"></script> 
+   <script src="static/js/bootstrap.bundle.min.js"></script>
+   <script src="static/js/main.js"></script> 
 </body>
 </html>
