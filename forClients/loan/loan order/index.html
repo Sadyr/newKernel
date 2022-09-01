@@ -14,13 +14,14 @@
    
     <div class="row">
         <div class="calculator-content-title">
-            <h1>Кредитный калькулятор</h1>
+		<br>
+            <h4>Кредитный калькулятор</h4>
         </div>
         
       <div class="col-md">
         
        <div class="p-3 border bg-light"> <div class="calculator-content-body-left-inputs">
-            <div class="title">Сумма кредита в тенге</div>
+            <div class="">Сумма кредита в тенге</div>
             <div class="input">
                 <input type="number" id="total-cost" value="0" class="input-number">
             </div>
@@ -28,7 +29,7 @@
                 <input type="range" min="61260000" max="500000000" step="20000000"id="total-cost-range" value="61260000" class="input-range">
             </div>
        
-            <div class="title">Срок кредита в месяцах</div>
+            <div class="">Срок кредита в месяцах</div>
             <div class="input">
                 <input type="number" id="credit-term" value="0"  class="input-number">
             </div>
@@ -40,18 +41,18 @@
       <div class="col-md">
         <div class="p-3 border bg-light"> 
             <div class="final-results-wrapper">
-            <p class="h2 calculator-content-title ">Наше предложение</p>
+            <p class="h4 calculator-content-title ">Наше предложение</p>
 
             <div class="final-result-item">
-                <div class="title">Сумма кредита</div>
+                <div class="">Сумма кредита</div>
                 <div class="value" id="amount-of-credit"><span>₸</span> 0</div>
             </div>
             <div class="final-result-item">
-                <div class="title">Процентная ставка</div>
+                <div class="">Процентная ставка</div>
                 <div class="value" id="percent">0<span>%</span></div>
             </div>
             <div class="final-result-item">
-                <div class="title">Ежемесячный платеж</div>
+                <div class="">Ежемесячный платеж</div>
                 <div class="value" id="monthly-payment"><span>₸</span> 0</div>
             </div>
              <!-- Кнопка-триггер модального окна -->
@@ -61,6 +62,7 @@
             <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Оставить Заявку</button>
           </div>
       </div>
+      
       
     </div>
   </div>
@@ -90,7 +92,6 @@
                     <select class="form-control" id="mySelect" name="select_urlico" onchange="check()"> 
                         <option value="Форма физ./юр лица" selected>Форма физ./юр лица</option>
                         <option value="ТОО" >ТОО</option>
-                        <option value="ИП">ИП</option>
                 </select>
                   </div>
                   <div class="demo">
@@ -130,9 +131,7 @@
               <select class="form-control"   name="select_zalog"> 
                   <option value="Движемое имещество">Движемое имещество</option>
                   <option value="Недвижемое имущество" selected>Недвижемое имущество</option>
-                  <option value="Оборудование">Оборудование</option>
-                  <option value="рочее (Гарантия фонда Даму, по программе Даму Оптима )">Прочее (Гарантия фонда Даму, по программе Даму Оптима )</option>
-                  <option value="Нет залога">Нет залога</option>
+                 
               </select>
             </div>
             

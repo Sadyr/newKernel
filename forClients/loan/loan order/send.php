@@ -52,7 +52,7 @@ $mail->SMTPSecure   = false;
 $mail->CharSet = 'UTF-8';
 $mail->From = 'test@almf.kz';
 $mail->FromName = 'test@almf.kz';
-$mailadr = 'sadyr0012@gmail.com';
+$mailadr = 'test@almf.kz';
 $mail->addAddress($mailadr);
 
 

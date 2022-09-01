@@ -279,21 +279,24 @@ function wpschool_text_shortcode() {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   
-    <title>Кредитный калькулятор</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <title>Calculator</title>
 </head>
 <body>
 <div class="container ">
    
     <div class="row">
         <div class="calculator-content-title">
-            <h1>Кредитный калькулятор</h1>
+		<br>
+            <h4>Кредитный калькулятор</h4>
         </div>
         
       <div class="col-md">
         
        <div class="p-3 border bg-light"> <div class="calculator-content-body-left-inputs">
-            <div class="title">Сумма кредита в тенге</div>
+            <div class="">Сумма кредита в тенге</div>
             <div class="input">
                 <input type="number" id="total-cost" value="0" class="input-number">
             </div>
@@ -301,7 +304,7 @@ function wpschool_text_shortcode() {
                 <input type="range" min="61260000" max="500000000" step="20000000"id="total-cost-range" value="61260000" class="input-range">
             </div>
        
-            <div class="title">Срок кредита в месяцах</div>
+            <div class="">Срок кредита в месяцах</div>
             <div class="input">
                 <input type="number" id="credit-term" value="0"  class="input-number">
             </div>
@@ -313,18 +316,18 @@ function wpschool_text_shortcode() {
       <div class="col-md">
         <div class="p-3 border bg-light"> 
             <div class="final-results-wrapper">
-            <p class="h2 calculator-content-title ">Наше предложение</p>
+            <p class="h4 calculator-content-title ">Наше предложение</p>
 
             <div class="final-result-item">
-                <div class="title">Сумма кредита</div>
+                <div class="">Сумма кредита</div>
                 <div class="value" id="amount-of-credit"><span>₸</span> 0</div>
             </div>
             <div class="final-result-item">
-                <div class="title">Процентная ставка</div>
+                <div class="">Процентная ставка</div>
                 <div class="value" id="percent">0<span>%</span></div>
             </div>
             <div class="final-result-item">
-                <div class="title">Ежемесячный платеж</div>
+                <div class="">Ежемесячный платеж</div>
                 <div class="value" id="monthly-payment"><span>₸</span> 0</div>
             </div>
              <!-- Кнопка-триггер модального окна -->
@@ -334,6 +337,7 @@ function wpschool_text_shortcode() {
             <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Оставить Заявку</button>
           </div>
       </div>
+      
       
     </div>
   </div>
@@ -380,7 +384,7 @@ function wpschool_text_shortcode() {
                         </div>
                         
                         <div class="input">
-                            <input type="range" min="61260000" max="500000000" step="20000000"id="total-cost-range-cf" value="61260000" class="input-range">
+                            <input type="range" min="61260000" max="500000000" step="20000000"id="total-cost-range-cf" value="20000000" class="input-range">
                         </div>
                     </div>
                </div>
@@ -402,7 +406,7 @@ function wpschool_text_shortcode() {
               <select class="form-control"   name="select_zalog"> 
                   <option value="Движемое имещество">Движемое имещество</option>
                   <option value="Недвижемое имущество" selected>Недвижемое имущество</option>
-                  
+                 
               </select>
             </div>
             
@@ -453,7 +457,8 @@ function wpschool_text_shortcode() {
     </div>
   </div>
   
-   
+   <script src="static/js/bootstrap.bundle.min.js"></script>
+   <script src="static/js/main.js"></script> 
 </body>
 </html>
 
