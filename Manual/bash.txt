@@ -1,0 +1,4 @@
+date 
+cal 
+which $SHELL 
+which bash 
