@@ -1,2 +1,0 @@
-This is example commit and push
-example number 2

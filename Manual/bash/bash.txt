@@ -1,0 +1,6 @@
+date 
+cal 
+which $SHELL 
+which bash 
+whoami
+date +%A
