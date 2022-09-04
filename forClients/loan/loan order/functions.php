@@ -404,8 +404,8 @@ function wpschool_text_shortcode() {
               <div class="mb-3">
               <p>Предлагаемое залоговое обеспечение            </p>
               <select class="form-control"   name="select_zalog"> 
-                  <option value="Движемое имещество">Движемое имещество</option>
-                  <option value="Недвижемое имущество" selected>Недвижемое имущество</option>
+              <option value="Движемое имещество">Движимое имущество                  </option>
+              <option value="Недвижемое имущество" selected>Недвижимое имущество</option>
                  
               </select>
             </div>

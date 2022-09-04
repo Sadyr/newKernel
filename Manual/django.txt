@@ -1,0 +1,4 @@
+create env - python3 -m venv myprojectenv
+source myworldenv/bin/activate
+source myworldenv/bin/activate
+django-admin --version

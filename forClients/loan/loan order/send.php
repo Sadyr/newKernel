@@ -40,19 +40,19 @@ require 'testsmtp/PHPMailer-master/src/SMTP.php';
 // Настройки сервера на примере Яндекс почты
 $mail = new PHPMailer;
 $mail->isSMTP();                                     
-$mail->Host         = 'pkz43.hoster.kz';
+$mail->Host         = 'srv-plesk53.ps.kz';
 $mail->Port         = 587;
 $mail->SMTPAuth     = true;
-$mail->Username     = 'test@almf.kz'; // Если почта для домена, то логин это полный адрес почты
+$mail->Username     = 'test@main.kernelx.ru'; // Если почта для домена, то логин это полный адрес почты
 $mail->Password     = 'Nimeria_1227';
 $mail->SMTPSecure   = false;
 
 
 // Авторизация
 $mail->CharSet = 'UTF-8';
-$mail->From = 'test@almf.kz';
-$mail->FromName = 'test@almf.kz';
-$mailadr = 'test@almf.kz';
+$mail->From = 'test@main.kernexl.ru';
+$mail->FromName = 'test@main.kernexl.ru';
+$mailadr = 'sadyr0012@gmail.com';
 $mail->addAddress($mailadr);
 
 
