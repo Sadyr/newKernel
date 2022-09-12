@@ -4,3 +4,5 @@ which $SHELL
 which bash 
 whoami
 date +%A
+
+echo $? / проверить статус выполненной команды
