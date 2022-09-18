@@ -1,0 +1,49 @@
+h1 {
+    background-color: green;
+  }
+  
+  div {
+    background-color: lightblue;
+  }
+  
+  p {
+    background-color: yellow;
+  }
+
+
+  p.one {
+    border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style:dotted;
+    border-left-style: solid;
+    border-width: 5px;
+    border-color: red;
+  }
+
+  p.two {
+    border-style: solid;
+    border-width: medium;
+    border-color: green;
+  }
+
+  p.three {
+    border-style: dotted;
+    border-width: 2px;
+    border-color: blue;
+  }
+
+  p.four {
+    border-style:dotted;
+    border-width: thick;
+  }
+
+  p.five {
+    border-style: double;
+    border-width:15px ;
+  }
+
+  p.six {
+    border: 2px solid red;
+    border-radius: 5px;
+    border-width: thick;
+  }

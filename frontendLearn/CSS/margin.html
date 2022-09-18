@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+            margin-top: 10px;
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 100px;
+        }
+        .cl {
+            width: 300px;
+            margin: auto;
+            border: 1px solid red
+        }
+
+        .inherit {
+        border: 1px solid red;
+        margin-left: 100px;
+
+        }
+        .ex {
+            margin-left: inherit;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<h2>Using individual margin properties</h2>
+<div>
+    This div element has a top margin of 100px, a right margin of 150px, a bottom margin 
+    of 100px, amd a left matgin of 80px
+</div>
+
+
+
+<h2>Use of the inherit value</h2>
+<p>
+    Let the left margin be inherit from the parent element 
+
+</p>
+
+<div class="inherit">
+    <p class="ex">This paragraph has an inherited left margin (from the div element).</p></div>
+
+
+
+<h2>User maring auto</h2>
+<p class="ex">
+    You can set the margin property to auto to horizontally center the element within its container. The element will then take up the specified width, and the remaining space will be split equally between the left and right margins:
+
+</p>
+<div class="cl">This div will be horizontally centerd because it was margin auto</div>
+</body>
+</html>
