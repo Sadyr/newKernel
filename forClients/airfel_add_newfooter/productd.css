@@ -2,19 +2,20 @@ body  {
 	background-color: #FFF8F6;
 }
 
+
+/* Container-top */
 .container {
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
 	width: auto;
 	border-radius: 5px;
-
+}
+.container-top {
 
 }
 
-
-
-.item {
+.item-top {
 	padding: 10px;
 	font-size: 20px;
 	/*border: 1px solid black;*/
@@ -25,9 +26,38 @@ body  {
 }
 
 
-h2 {
+.h2-top {
 	text-align: center;
 }
+
+/* container-main*/
+
+.container-main {
+
+}
+
+
+.item-main {
+	padding: 10px;
+	font-size: 20px;
+	/*border: 1px solid black;*/
+	height: fit-content;
+	max-width: 100%;
+	flex-basis: 50%;
+	flex-grow:1;
+	align-items: center
+}
+
+.paragraph-main {
+	background-color: #FAECE9;
+}
+
+.h2-main {
+	background-color: #FAECE9;
+
+}
+
+
 
 ul{
 	/*list-style: url(https://i.imgur.com/iDST6Z1.png);*/
@@ -35,10 +65,7 @@ ul{
 	
 	}
 
-/* IMprove 
-
-*/
-
+/* container-improve */ 
 .container-improve {
 	display: flex;
 	justify-content: space-around;
@@ -55,27 +82,13 @@ ul{
 	width: fit-content;
 	flex-basis: 50%;
 	flex-grow:1;
-		border-radius: 5px;
+	border-radius: 5px;
 
 }
 
-.item-main {
-	padding: 10px;
-	font-size: 20px;
-	/*border: 1px solid black;*/
-	height: fit-content;
-	max-width: 100%;
-	flex-basis: 50%;
-	flex-grow:1;
-	align-items: center
-}
 
-.main-paragraph {
-	background-color: #FAECE9;
-}
-
-.main-h2 {
-	background-color: #FAECE9;
+.h2-improve {
+	text-align: center;
 
 }
 
@@ -91,22 +104,19 @@ ul{
 
 }
 
-
-.container-icon {
+/*  container-red-icon  */
+.container-red-icon  {
 	background-color: #9F2531;
-}
 	
-
-
-
-.items {
+}
+.items-red {
 	background-color: #9F2531;
 	padding: 10px;
 	margin: 1px;
 	font-size: 25px;
 	/*border: 1px solid black;*/
 	height: fit-content;
-	width:14%;
+	width:150px;
 	text-align: center;
 	color: white;
 	align-items: center;
@@ -114,15 +124,54 @@ ul{
 
 }
 
-.item-icon {
+.item-red-icon {
 	background-color: #FAECE9;
 	padding: 40px;
 	margin: 10px;
 	font-size: 60px;
 	border: 1px solid black;
-	height: fit-content;
-	width:90%;
+	height: 130px;
+	width:140px;
 	color: #9F2531;
 	border-radius: 30px;
 
+}
+
+
+
+/* container-white-icon */
+.container-white-icon  {
+	background-color: #9F2531;
+	
+}
+.items-white {
+	background-color: #9F2531;
+	padding: 10px;
+	margin: 1px;
+	font-size: 25px;
+	/*border: 1px solid black;*/
+	height: fit-content;
+	width:150px;
+	text-align: center;
+	color: white;
+	align-items: center;
+
+
+}
+
+.item-white-icon {
+	background-color: #FAECE9;
+	padding: 40px;
+	margin: 10px;
+	font-size: 60px;
+	border: 1px solid black;
+	height: 130px;
+	width:140px;
+	color: #9F2531;
+	border-radius: 30px;
+
+}
+.container-flud-black {
+	background-color:#424243 ;
+	color: white;
 }
