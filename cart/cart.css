@@ -1,0 +1,21 @@
+.container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width:85%;
+	border: 3px solid black;
+}
+.head-title {
+    text-align: center;
+    justify-content: center;
+}
+
+
+ul {
+	list-style: none;
+}
+
+.shop-list li {
+	border: 2px solid black;
+	font-size: 30px;
+}

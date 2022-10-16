@@ -1,0 +1,417 @@
+Проверить документацию python и ознакомиться с классами
+ознакомиться с основными модулями django and python
+Изучить переменную окружения linux
+Умение создавать рабочие среды (дев,продакшн,тестовая)
+умение настраивать сеть
+Знание контейнеров
+Знание гита
+навыки работы с редектором вим
+настройка нгинск
+диагностика памяти,сети
+работа с процессами
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"   href="img/favicon.ico" type="image/x-icon">
+	    <script src="https://kit.fontawesome.com/1299574373.js" crossorigin="anonymous"></script>
+
+  <title><?php wp_title( $sep, $echo, $seplocation ); ?></title>
+<?php wp_head(); ?>
+	
+	
+	<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(89941457, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true,
+        ecommerce:"dataLayer"
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/89941457" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<!-- start header -->
+<body>
+	<!-- 
+    <header>
+       <div class="container">
+             <div class="row">
+                <div class="col-12"> 
+                    <h1 class="text-center text-uppercase ">Инженерная</h1>
+                    <h4 class="text-center text-uppercase ">Сантехника</h4>
+                </div>
+            </div> 
+        </div>
+    </header>-->
+
+
+	
+<!-- <nav class="navbar sticky-top navbar-expand-lg  ">
+
+        <div class="container-fluid ">
+          <a class="navbar-brand fw-bold" href=
+			
+			</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent" style= "color:red;">  
+			
+         <ul class="navbar-nav  mx-auto ms-auto mb-2 mb-lg-0 " style= "color:red;">
+          <?php wp_nav_menu(array(
+	         'theme_location'=> 'top',
+	         'container' => null,
+	         'menu_class' => ' navbar-nav navbar nav-item fw-bold nav-link headerNavMenu ',
+	       ));?>   
+         </ul>
+			
+        </div>        
+        </div>       
+      </nav> -->
+	
+	 <div class="container container-nav  ">
+        <div class="item-nav "></div>
+</div>
+
+        <div class="item-nav brand"> <a href="<?php bloginfo('url');?>"><i class="fa-solid fa-fire-flame-curved"></i> Airfel</a> </div>
+        <div class="item-nav ">
+          
+
+            <div class="nav-element" >
+                <!--<a class="nav-element" data-bs-toggle="modal" data-bs-target="#exampleModal"  href="#"> Заказать звонок</a>-->
+				
+								<a class="nav-element" data-bs-toggle="modal"    data-bs-target="#exampleModal"      > <i class="fa-solid fa-phone"></i> Заказать звонок</a> 
+
+                <!--<a class="nav-element"data-bs-toggle="modal" data-bs-target="#cartShop"  href="#">Корзина</a>-->
+				<a class="nav-element" data-bs-toggle="modal"    data-bs-target="#cartShop"  onclick="displayCart();"    > <i class="fa-solid fa-cart-shopping"></i>  Корзина</a>
+                <a class="nav-element" href="#"><i class="fa-solid fa-magnifying-glass"></i>Поиск</a>
+
+
+            </div>
+        </div>
+
+       </div>
+	
+	
+	 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Заказать звонок</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body ">
+            <div class="container py-4">
+
+				 <div class="item-info">
+			<form id="contactForm"  action="send.php" method="post">
+
+              <h5 >Заказать звонок</h5>
+                  <div class="mb-3">
+                  <input class="form-control"  type="phone" id="fname" name="phone"  required placeholder="Введите Ваш телефон">
+                  </div>
+                        <!-- Email address input -->
+                  <div class="mb-3">
+                    <input class="form-control" id="emailAddress" type="email"  name = "email" required placeholder="Введите Email" data-sb-validations="required, email" />
+                  </div>
+                        <div class="d-grid">
+                          <button class="btn btn-primary btn-lg" type="submit">Отправить</button>
+                        </div>
+									                  </form>
+				  </div>
+ 
+                
+              </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  
+		
+		
+		 <div class="modal fade" id="cartShop" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			 <script> update(); </script>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 >Список желаемых товаров</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container ">
+				<div class="row ">
+				<div class="col ">				
+			<form id="contactForm"  action="<?php bloginfo('url');?>/send.php" method="post">
+				<p class="cart-num"></p>
+              <!--<div class="container">-->
+                 <div class="products-container">
+                      <div class="products">
+						  <div class="product"> <h6>Корзина пуста! </h6> <h6>Пожалуйста, выберите желаемые товары! </h6></div>
+                      </div>
+                <!-- </div>-->
+                </div>	
+				 <div class="d-grid">
+					 
+					 <div class='test'> </div>
+                  <textarea class=" maini form-control"placeholder="Коментарий к заявке" aria-label="With textarea"></textarea>
+                                    </div>
+
+					 <div class="mb-3">
+                 <input class=" maini form-control"  type="phone" id="fname" name="phone"  required placeholder="Введите Ваш телефон">
+                  </div>
+                  <div class="mb-3">
+                    <input class=" maini form-control" id="emailAddress" type="email"  name = "email" required                                        placeholder="Введите Email" data-sb-validations="required, email" />
+                  </div>
+                     <div class="d-grid">
+                          <button class=" maini btn btn-primary btn-lg" type="submit">Отправить</button> <br>
+                     </div>										
+	         </form>
+			<button  onclick="clearCart()"  id="maini" class=" maini clear btn btn-danger btn-lg" >Очистить корзину</button>     
+              </div>
+				
+        </div>
+       
+      </div>
+    </div>
+  </div>
+		    </div>
+		    </div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"   href="img/favicon.ico" type="image/x-icon">
+	    <script src="https://kit.fontawesome.com/1299574373.js" crossorigin="anonymous"></script>
+
+  <title><?php wp_title( $sep, $echo, $seplocation ); ?></title>
+<?php wp_head(); ?>
+	
+	
+	<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(89941457, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true,
+        ecommerce:"dataLayer"
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/89941457" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<!-- start header -->
+<body>
+	<!-- 
+    <header>
+       <div class="container">
+             <div class="row">
+                <div class="col-12"> 
+                    <h1 class="text-center text-uppercase ">Инженерная</h1>
+                    <h4 class="text-center text-uppercase ">Сантехника</h4>
+                </div>
+            </div> 
+        </div>
+    </header>-->
+
+
+	
+<!-- <nav class="navbar sticky-top navbar-expand-lg  ">
+
+        <div class="container-fluid ">
+          <a class="navbar-brand fw-bold" href="<?php bloginfo('url');?>"> 
+			<?php bloginfo('name');?>
+			</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent" style= "color:red;">  
+			
+         <ul class="navbar-nav  mx-auto ms-auto mb-2 mb-lg-0 " style= "color:red;">
+          <?php wp_nav_menu(array(
+	         'theme_location'=> 'top',
+	         'container' => null,
+	         'menu_class' => ' navbar-nav navbar nav-item fw-bold nav-link headerNavMenu ',
+	       ));?>   
+         </ul>
+			
+        </div>        
+        </div>       
+      </nav> -->
+	
+	 <div class="container container-nav  ">
+        <div class="item-nav "></div>
+
+        <div class="item-nav brand"> <a href="<?php bloginfo('url');?>"><i class="fa-solid fa-fire-flame-curved"></i> Airfel</a> </div>
+        <div class="item-nav ">
+          
+
+            <div class="nav-element" >
+                <!--<a class="nav-element" data-bs-toggle="modal" data-bs-target="#exampleModal"  href="#"> Заказать звонок</a>-->
+				
+								<a class="nav-element" data-bs-toggle="modal"    data-bs-target="#exampleModal"      > <i class="fa-solid fa-phone"></i> Заказать звонок</a> 
+
+                <!--<a class="nav-element"data-bs-toggle="modal" data-bs-target="#cartShop"  href="#">Корзина</a>-->
+				<a class="nav-element" data-bs-toggle="modal"    data-bs-target="#cartShop"  onclick="displayCart();"    > <i class="fa-solid fa-cart-shopping"></i>  Корзина</a>
+                <a class="nav-element" href="#"><i class="fa-solid fa-magnifying-glass"></i>Поиск</a>
+
+
+            </div>
+        </div>
+
+       </div>
+	
+	
+	 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Заказать звонок</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body maini">
+            <div class="container py-4">
+
+                <!-- Bootstrap 5 starter form -->
+				 <div class="item-info">
+			<form id=""  action="send.php" method="post">
+
+              <h4 >Заказать звонок</h4>
+              <ul class="list-unstyled">
+                <form id="contactForm">      
+                  <div class="mb-3">
+                  <input class="form-control"  type="phone" id="fname" name="phone"  required placeholder="Введите Ваш телефон">
+                  </div>
+                        <!-- Email address input -->
+                  <div class="mb-3">
+                    <input class="form-control" id="emailAddress" type="email"  name = "email" required placeholder="Введите Email" data-sb-validations="required, email" />
+                  </div>
+                              <!-- Form submit button -->
+                        <div class="d-grid">
+                          <button class="btn btn-primary btn-lg" type="submit">Отправить</button>
+                        </div>
+									                  </form>
+				  </div>
+ 
+                
+              </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  
+		
+		
+		 <div class="modal fade" id="cartShop" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			 <script> update(); </script>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 >Список желаемых товаров</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container py-4">
+				
+				
+	
+
+                <!-- Bootstrap 5 starter form -->
+				 <div class="item-info">
+			<form id=""  action="send.php" method="post">
+				<p class="cart-num"></p>
+
+    <div class="container">
+
+<div class="products-container">
+    <div class="products">
+
+    </div>
+</div>
+</div>
+				
+
+  <textarea class=" maini form-control"placeholder="Коментарий к заявке" aria-label="With textarea"></textarea>
+
+
+
+              <ul class=" list-unstyled">
+                <form id="contactForm">      
+                  <div class="mb-3">
+                  <input class=" maini form-control"  type="phone" id="fname" name="phone"  required placeholder="Введите Ваш телефон">
+                  </div>
+                        <!-- Email address input -->
+                  <div class="mb-3">
+                    <input class=" maini form-control" id="emailAddress" type="email"  name = "email" required placeholder="Введите Email" data-sb-validations="required, email" />
+                  </div>
+                              <!-- Form submit button -->
+                        <div class="d-grid">
+                          <button class=" maini btn btn-primary btn-lg" type="submit">Отправить</button> <br>
+
+                        </div>
+											
+
+									                  </form>
+				  </div>
+								   <button  onclick="clearCart()"  id="maini" class=" maini clear btn btn-danger btn-lg" >Очистить корзину</button>
+
+ 
+                
+              </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  

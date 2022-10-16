@@ -122,21 +122,6 @@ ul{
 }
 
 
-.h2-technology {
-	text-align: center;
-
-}
-
-
-
-.item-container-technology {
-	display: flex;
-	height: fit-content;
-	width: 50%;
-	border: 3px solid green;
-
-}
-
 
 
 
@@ -331,4 +316,163 @@ ul{
 
 .item-info {
 padding-top:20px;
+}
+
+
+
+.item-tech {
+	display: flex;
+	justify-content:center;
+	text-align: center;
+	padding: 5px;
+	width: 40%;
+	margin: 5px;
+	background-color: #9f2531;
+}
+
+.item-icon {
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	font-size: 50px;
+	padding: 20px;
+	width: 80%;
+	height: fit-content;
+	margin: 5px;
+	color: white;
+	background-color: #9f2531;
+
+}
+.item-text {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+	width: 80%;
+	height: fit-content;
+	margin: 5px;
+	background-color: #9f2531;
+	color: white;
+
+
+}
+
+
+.h2-technology {
+	text-align: center;
+	background-color: #9f2531;
+	color: white;
+	margin: 0;
+	
+
+
+
+}
+
+
+
+.item-container-technology {
+	display: flex;
+	height: fit-content;
+	width: 50%;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	background-color: #9f2531;
+
+
+}
+
+.tech-par {
+	color: white;
+	margin:15px;
+	font-size: 20px;
+
+
+}
+
+
+.container-technology  {
+	background-color: #9f2531;
+
+
+}
+
+
+
+
+.item-tech-white  {
+	display: flex;
+	justify-content:center;
+	text-align: center;
+	padding: 5px;
+	width: 40%;
+	margin: 5px;
+	background-color:white;
+}
+
+.item-icon-white  {
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	font-size: 50px;
+	padding: 20px;
+	width: 80%;
+	height: fit-content;
+	margin: 5px;
+	color:  #9f2531;
+	background-color: white;
+
+}
+.item-text-white  {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+	width: 80%;
+	height: fit-content;
+	margin: 5px;
+	background-color:white;
+	color: black;
+
+
+}
+
+
+.h2-technology-white  {
+	text-align: center;
+	background-color: white;
+	color: black;
+	margin-top: 15px;
+	margin-bottom: 0px;
+
+
+
+}
+
+
+
+.item-container-technology-white  {
+	display: flex;
+	height: fit-content;
+	width: 50%;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	background-color: white;
+
+
+}
+
+.tech-par-white  {
+	color: black;
+	margin:15px;
+	font-size: 20px;
+
+}
+
+
+.container-technology-white  {
+	background-color: white;
+
 }
