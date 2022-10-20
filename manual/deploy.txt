@@ -1,0 +1,14 @@
+Деплой джанго+реакт проекта на панели Plesk
+1. ОБновить пакеты
+sudo apt-get update
+sudo apt-get upgrade
+2. Создать пользователя с привилигиями sudo
+3.Установить tmux
+4. Создать новую сессию tmux для установки Plesk
+tmux new-session -s sadyrplesk
+Аналогично можно разделить панель по вертикали, нажав Ctrl+b, а затем Shift+%:
+tmux ls - список сессий
+which python3
+whatis python3
+whereis python3
+5.
