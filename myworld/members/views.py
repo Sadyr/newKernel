@@ -1,6 +1,14 @@
-from django.http import HttpResponse
+from logging import lastResort
+from multiprocessing import context
+from re import template
+import re
+from tempfile import tempdir
+from urllib import request
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from .models import Members
+from django.urls import reverse
+
 
 """ def index(request):
     return HttpResponse("Hello world")
@@ -11,13 +19,48 @@ def index(request):
 
 def index(request):
     mymembers = Members.objects.all().values()
-    output=""
-    for x in mymembers:
-        output += x["firstname"]
-        output += ' '
-        output += x["lastname"]
+    template = loader.get_template("index.html")
+    context = {
+        'mymembers':mymembers,
+    }
+    print(context)
+    return HttpResponse(template.render(context,request))
 
-        
-    print(output)
-    return HttpResponse(output)
+def add(request):
+    template = loader.get_template('add.html')
+    return HttpResponse(template.render({},request))
+
+def addrecord(request):
+    print('Helllooooo')
+    print(type(request))
+
+    x = request.POST['first']
+    y = request.POST['last']
+    member = Members(firstname = x, lastname= y)
+    member.save()
+    return HttpResponseRedirect(reverse('index'))
+
+def delete(request, id):
+    member = Members.objects.get(id=id)
+    member.delete()
+    return HttpResponseRedirect(reverse(index))
+
+
+def update(request,id):
+    mymember = Members.objects.get(id=id)
+    template = loader.get_template('update.html')
+    context = {
+        'mymember':mymember,
+    }
+    return HttpResponse(template.render(context, request))
+
+
+def updaterecord(request,id):
+    first = request.POST['first']
+    last = request.POST['last']
+    member = Members.objects.get(id=id)
+    member.firstname = first
+    member.lastname = last
+    member.save()
+    return HttpResponseRedirect(reverse(index))
 
