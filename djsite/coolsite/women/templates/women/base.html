@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{title}}</title>
 </head>
 <body>
-    HELLO WORLD
-    <script src="./objects.js "></script>
+    <ul>
+        {% for m in menu %}
+        <li>{{m}}</li>
+        {%endfor%}
+    </ul>
+
+    {% block content %}
+{% endblock %}
+    
 </body>
 </html>
