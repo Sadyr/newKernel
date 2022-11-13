@@ -1,0 +1,34 @@
+docker version
+
+docker run hello-world
+docker images
+docker ps -a
+docker pull hello-world
+systemctl status docker
+service --status-all
+systemctl disablle nginx
+sudo docker rm  name/id
+sudo docker run busybox
+sudo docker run -it busybox
+hostname -i
+sudo docker container prune
+docker run -d nginx
+docker container inspect 42b91e4e2e9f
+docker stop vibrant_leakey
+docker exec -it de33216ac83a bash
+docker run -d --name my_nginx nginx
+docker container prune
+docker run -p 8080:80 --name sadyr_nginx nginx
+docker run -d  -p 8080:80 --name sadyr_nginx nginx
+docker run -d -p 8080:80  -v ${PWD}:/usr/share/nginx/html nginx
+docker run -it --rm busybox
+
+$ docker run \
+> --name sadyr_nginx\
+> -v ${PWD}:/usr/share/nginx/html \
+> -p 8080:80 \
+> -d \
+> --rm \
+> nginx
+
+

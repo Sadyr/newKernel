@@ -5,3 +5,10 @@ su - sadyr
 ааа
 мкмемемме5меммемем
 меме
+
+service --status-all
+
+
+hostnamectl
+cat /etc/os-release
+
