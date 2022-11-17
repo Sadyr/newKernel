@@ -1,5 +1,0 @@
-import gc
->>> gc.get_referrers(a)
-[{'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <class '_frozen_importlib.BuiltinImporter'>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, 'b': 100500, 'c': 100500, 'a': 100500, 'gc': <module 'gc' (built-in)>}]
-
-Получить обекты в виде словаря
