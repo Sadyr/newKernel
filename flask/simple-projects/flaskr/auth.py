@@ -16,7 +16,7 @@ def register():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        db = get_db
+        db = get_db()
         error = None
 
         if not username:
@@ -27,9 +27,10 @@ def register():
         if error is None:
             try:
                 db.execute (
-                    "INSERT INTO user (username, password) VALUES (?,?)",
+                    "INSERT INTO user (username, password) VALUES (?,?)" ,
                     (username, generate_password_hash(password)),
                 )
+                
                 db.commit()
             except db.IntegrityError:
                 error = f"User {username} is already registred."
@@ -59,7 +60,7 @@ def login():
         if error is None:
             session.clear()
             session['user_id'] = user['id']
-            return redirect(url_for('index'))
+            return redirect(url_for('blog.index'))
         flash(error)
     return render_template('auth/login.html')
 
@@ -77,3 +78,18 @@ def load_logged_in_user():
 def logout():
     session.clear()
     return redirect(url_for('index'))
+
+
+def login_required(view):
+    @functools.wraps(view)
+    def wrappeed_view(**kwargs):
+        if g.user is None:
+            return redirect(url_for('auth.login'))
+
+        return view(**kwargs)
+    return wrappeed_view
+
+@bp.route('/test')
+def test():
+    print(dir(g))
+    return 'you logged'
