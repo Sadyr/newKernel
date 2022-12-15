@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Books{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  {% for book in books %}
+    <ul>
+        <li>{{ book['title'],book['description'],book['author_id'],book['name'],book['status_id']}}  </li>
+    </ul>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}

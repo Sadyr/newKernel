@@ -15,6 +15,7 @@ def register():
         password = request.form['password']
         email = request.form['email']
         db = get_db()
+        error = None
 
         if not username:
             error = 'Username is required'
@@ -43,10 +44,10 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         passwword = request.form['password']
-        db = get_db
+        db = get_db()
         error = None
         user = db.execute(
-            'SELECT * FROM user WHERE username = ?', (username,)
+            'SELECT * FROM users WHERE username = ?', (username,)
         ).fetchone()
 
         if user is None:
@@ -57,25 +58,29 @@ def login():
         if error is None:
             session.clear()
             session['user_id'] = user['id']
-            return redirect(url_for('index'))
+            print(session)
+            return redirect(url_for('hello'))
+            
+            
         flash(error)
     return render_template('auth/login.html')
 
 @bp.before_app_request
 def load_logged_in_user():
     user_id = session.get('user_id')
+    
 
     if user_id is None:
         g.user = None
     else:
         g.user = get_db().execute(
-            'SELECT * FROM users WHERE id = ?', (user_id)
+            'SELECT * FROM users WHERE id = ?', (user_id,)
         ).fetchone()
 
 @bp.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('index'))
+    return redirect(url_for('hello'))
 
 def login_required(view):
     @functools.wraps(view)

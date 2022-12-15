@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Jenre{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  {% for jenre in jenres %}
+    <ul>
+        <li>{{ jenre['name']}}  </li>
+    </ul>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
