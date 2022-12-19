@@ -79,3 +79,68 @@ def jenre():
     ).fetchall()
     print(jenres)
     return render_template('book/jenre.html', jenres=jenres)
+
+
+@bp.route('/add_status', methods=['GET', 'POST'])
+@login_required
+def add_status():
+    if request.method == 'POST':
+        name = request.form['name']
+        error = None
+
+        if not name:
+            error = 'Name is required'
+        if error is not None:
+            flash(error)
+        else:
+            db = get_db()
+            db.execute(
+                'INSERT INTO status (name)'
+                ' VALUES (?)',
+                (name,)
+            )
+            db.commit()
+            return redirect(url_for('book.status'))
+    return render_template('book/add_status.html')
+
+
+@bp.route('/status')
+def status():
+    db = get_db()
+    statuses = db.execute(
+        'SELECT * '
+        ' FROM status'
+    ).fetchall()
+    return render_template('book/status.html', statuses=statuses)
+
+
+@bp.route('/add_author', methods=['GET', 'POST'])
+@login_required
+def add_author():
+    if request.method == 'POST':
+        name = request.form['name']
+        error = None
+
+        if not name:
+            error = 'Name is required'
+        if error is not None:
+            flash(error)
+        else:
+            db = get_db()
+            db.execute(
+                'INSERT INTO authors (name)'
+                ' VALUES (?)',
+                (name,)
+            )
+            db.commit()
+            return redirect(url_for('book.author'))
+    return render_template('book/add_author.html')
+
+@bp.route('/author')
+def author():
+    db = get_db()
+    authors = db.execute(
+        'SELECT * '
+        ' FROM authors'
+    ).fetchall()
+    return render_template('book/author.html', authors=authors)
