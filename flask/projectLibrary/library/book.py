@@ -9,7 +9,7 @@ from library.db import get_db
 bp = Blueprint('book', __name__)
 
 @bp.route('/')
-def index():
+def index():   # Функция для главной страницы сайта
     db = get_db()
     books = db.execute(
         'SELECT  title, description,author_id,jenre_id, status_id, jenre.name '
@@ -20,7 +20,7 @@ def index():
     return render_template('book/index.html', books=books)
 
 
-@bp.route('/create', methods=['GET', 'POST'])
+@bp.route('/add_book', methods=['GET', 'POST'])  # Функция для добавление книг
 @login_required
 def create():
     if request.method == 'POST':
@@ -45,9 +45,9 @@ def create():
             db.commit()
             return redirect(url_for('book.index'))
 
-    return render_template('book/create.html')
+    return render_template('book/add_book.html')
 
-@bp.route('/add_jenre', methods=['GET', 'POST'])
+@bp.route('/add_jenre', methods=['GET', 'POST']) # Функция для добавления жанров
 @login_required
 def add_jenre():
     if request.method == 'POST':
@@ -70,7 +70,7 @@ def add_jenre():
     return render_template('book/add_jenre.html')
 
 
-@bp.route('/jenre')
+@bp.route('/jenre') # Функция страницы жанры
 def jenre():
     db = get_db()
     jenres = db.execute(
@@ -81,7 +81,7 @@ def jenre():
     return render_template('book/jenre.html', jenres=jenres)
 
 
-@bp.route('/add_status', methods=['GET', 'POST'])
+@bp.route('/add_status', methods=['GET', 'POST'])  # Функция для добавления статуса 
 @login_required
 def add_status():
     if request.method == 'POST':
@@ -104,7 +104,7 @@ def add_status():
     return render_template('book/add_status.html')
 
 
-@bp.route('/status')
+@bp.route('/status') # Функция для страницы статуса
 def status():
     db = get_db()
     statuses = db.execute(
@@ -114,7 +114,7 @@ def status():
     return render_template('book/status.html', statuses=statuses)
 
 
-@bp.route('/add_author', methods=['GET', 'POST'])
+@bp.route('/add_author', methods=['GET', 'POST']) # Функция для добавления автора книг
 @login_required
 def add_author():
     if request.method == 'POST':
@@ -136,7 +136,7 @@ def add_author():
             return redirect(url_for('book.author'))
     return render_template('book/add_author.html')
 
-@bp.route('/author')
+@bp.route('/author')  # Страница для автора книг
 def author():
     db = get_db()
     authors = db.execute(
