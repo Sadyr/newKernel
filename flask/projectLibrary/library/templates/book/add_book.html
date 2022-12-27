@@ -1,23 +1,39 @@
 {% extends 'base.html' %}
-
-{% block header %}
-  <h1>{% block title %}New Post{% endblock %}</h1>
-{% endblock %}
-
+{% block style %} <link rel="stylesheet" href="/static/css/add_book.css"> {% endblock %}
+<title>{% block title %} {{ title }} {% endblock %}</title>
 {% block content %}
-  <form method="post">
-    <label for="title">Title</label>
-    <input name="title" id="title" value="{{ request.form['title'] }}" required>
-    <label for="description">Description</label>
-    <textarea name="description" id="body">{{ request.form['description'] }}</textarea>
-    <label for="author_id">author_id</label>
-    <input name="author_id" id="title" value="{{ request.form['author_id'] }}" required>
-    <label for="jenre_id">jenre_id</label>
-    <input name="jenre_id" id="title" value="{{ request.form['jenre_id'] }}" required>
-    <label for="jenre_id">status_id</label>
-    <input name="status_id" id="title" value="{{ request.form['status_id'] }}" required>
+      <div class="container">
+        <h2>Add book</h2>
+          <form action="" method="POST">
+            <label for="title">Title</label>
+            <input type="text" id="fname" name="title" placeholder="Book is title ...">
+        
+            <label for="description">Description</label>
+            <textarea id="subject" name="description" placeholder="Book description.." style="height:200px"></textarea>
+        
+            <label for="author">Author</label>
+            <select id="country" name="author">
+              {% for author in authors %}
 
-    
-    <input type="submit" value="Save">
-  </form>
+              <option value="{{ author['id'] }}">{{ author['name'] }}</option>
+              {% endfor %}
+
+            </select>
+  
+            <label for="jenre">Jenre</label>
+            <select id="country" name="jenre">
+              {% for jenre in jenres %}
+              <option value="{{ jenre['id'] }}">{{ jenre['name'] }}</option>
+              {% endfor %}
+            </select>
+  
+            <label for="status">Status</label>
+            <select id="country" name="status">
+              {% for status in statuses %}
+              <option value="{{ status['id'] }}">{{ status['name'] }}</option>
+              {% endfor %}
+            </select>
+            <input type="submit" value="Submit">
+          </form>
+        </div>
 {% endblock %}

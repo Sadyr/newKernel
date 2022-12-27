@@ -1,28 +1,62 @@
-<!doctype html>
-<title>{% block title %}{% endblock %} - Library</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-<nav>
-  <h1>Library</h1>
-  <ul>
-    {% if g.user %}
-      <li><span>{{ g.user['username'] }}</span>
-      <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
-        <li><a href="{{ url_for('book.status') }}">status</a></li>
-        <li><a href="{{ url_for('book.author') }}">author</a></li>
-        <li><a href="{{ url_for('book.jenre') }}">jenre</a></li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    {% block style %} {% endblock %}
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <header>
+<nav class="navbar navbar-expand-sm bg-light">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        {% for menu in menus %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ menu['url']}}">{{ menu['name'] }}</a>
+        </li>
+        {% endfor %}
 
-    {% else %}
-      <li><a href="{{ url_for('auth.register') }}">Register</a>
-      <li><a href="{{ url_for('auth.login') }}">Log In</a>
-    {% endif %}
-  </ul>
-</nav>
-<section class="content">
-  <header>
-    {% block header %}{% endblock %}
-  </header>
-  {% for message in get_flashed_messages() %}
-    <div class="flash">{{ message }}</div>
-  {% endfor %}
-  {% block content %}{% endblock %}
-</section>
+        {% if g.user['username'] %}
+        <li class="nav-item">
+          <a class="nav-link" href="#">{{ g.user['username'] }}</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('auth.register') }}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
+          </li>
+          {% endif %}
+      </ul>
+    </div>
+  </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+
+
+      <footer class="  d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">&copy; 2022 Kenrelx, Inc</p>
+    
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+        </a>
+    
+        <ul class=" nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Settings</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About us</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+        </ul>
+      </footer>
+    
+
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

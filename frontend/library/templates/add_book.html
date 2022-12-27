@@ -47,22 +47,39 @@
     
 
     <div class="container">
+      <h2>Add book</h2>
         <form action="/action_page.php">
-          <label for="fname">First Name</label>
-          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          <label for="title">Title</label>
+          <input type="text" id="fname" name="title" placeholder="Book is title ...">
       
-          <label for="lname">Last Name</label>
-          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+          <label for="description">Description</label>
+          <textarea id="subject" name="description" placeholder="Book description.." style="height:200px"></textarea>
       
-          <label for="country">Country</label>
-          <select id="country" name="country">
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
+          <label for="author">Author</label>
+          <select id="country" name="author">
+            <option value="australia">Abai</option>
+            <option value="canada">Martin</option>
+            <option value="usa">Pushkin</option>
           </select>
+
+          <label for="jenre">Jenre</label>
+          <select id="country" name="jenre">
+            <option value="australia">Fantasy</option>
+            <option value="canada">Roman</option>
+            <option value="usa">Scince</option>
+          </select>
+
+          <label for="status">Status</label>
+          <select id="country" name="status">
+            <option value="australia">no start</option>
+            <option value="canada">in process</option>
+            <option value="usa">Finish</option>
+          </select>
+
+
+
       
-          <label for="subject">Subject</label>
-          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+         
       
           <input type="submit" value="Submit">
         </form>
