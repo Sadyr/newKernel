@@ -11,7 +11,7 @@ bp = Blueprint('book', __name__)
 menus = [
         {'name': 'Главная', 'url':"/"},
          {'name': 'Книги', 'url':"/books"},
-        {'name': 'Фильмы', 'url':"/movie"},
+        {'name': 'Фильмы', 'url':"#"},
     ]
 
 @bp.route('/books')
@@ -92,7 +92,7 @@ def add_jenre():
             )
             db.commit()
             return redirect(url_for('book.jenre'))
-    return render_template('book/add_jenre.html')
+    return render_template('book/add_jenre.html',menus=menus)
 
 
 @bp.route('/jenre') # Функция страницы жанры
@@ -103,7 +103,7 @@ def jenre():
         ' FROM jenre'
     ).fetchall()
     print(jenres)
-    return render_template('book/jenre.html', jenres=jenres)
+    return render_template('book/jenre.html', jenres=jenres, title = 'Jenres',menus=menus)
 
 
 @bp.route('/add_status', methods=['GET', 'POST'])  # Функция для добавления статуса 
@@ -136,7 +136,7 @@ def status():
         'SELECT * '
         ' FROM status'
     ).fetchall()
-    return render_template('book/status.html', statuses=statuses)
+    return render_template('book/status.html', statuses=statuses, title = 'Statuses',menus=menus)
 
 
 @bp.route('/add_author', methods=['GET', 'POST']) # Функция для добавления автора книг
@@ -168,4 +168,4 @@ def author():
         'SELECT * '
         ' FROM authors'
     ).fetchall()
-    return render_template('book/authors.html', authors=authors)
+    return render_template('book/authors.html', authors=authors, menus=menus)
