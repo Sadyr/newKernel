@@ -17,9 +17,9 @@
     <div class="card">
       <h3>{{ book['title'] }}</h3>
       <div>
-      <a class="btn btn-primary btn-sm btn-books "  href="#" role="button">Show</a> 
-      <a class="   btn btn-primary btn-sm btn-success btn-books "   href="#" role="button">Edit</a> 
-      <a class="  btn btn-primary btn-sm btn-danger btn-books "  href="#" role="button">Delete</a>
+      <a class="btn btn-primary btn-sm btn-books "  href="books/show_book/{{ book['id'] }}" role="button">Show</a> 
+      <a class="   btn btn-primary btn-sm btn-success btn-books "   href="books/edit_book/{{ book['id'] }}" role="button">Edit</a> 
+      <a class="  btn btn-primary btn-sm btn-danger btn-books "   href="books/delete_book/{{ book['id'] }}" role="button" onclick="return confirm('Are you sure that delete this book?')">Delete</a>
     </div>
     </div>
   </div>
